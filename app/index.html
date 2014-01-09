@@ -32,6 +32,11 @@
             </li>
         </ul>
     </section>
+    <footer id="footer">
+        <span id="todo-count"><strong>{{remaining()}}</strong> item(s) left</span>
+
+        <button id="clear-completed" ng-click="archive()">Clear completed ({{todos.length - remaining()}})</button>
+    </footer>
 </section>
 
 <script src="lib/angular/angular.js"></script>
