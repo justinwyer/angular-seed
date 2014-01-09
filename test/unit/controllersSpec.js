@@ -49,4 +49,9 @@ describe('controllers', function () {
         scope.archive();
         expect(scope.todos.length).toBe(1);
     });
+
+    it('should clear the new todo item text once added', function () {
+        scope.addTodo('Do something');
+        expect(scope.todoText).toBe("");
+    });
 });

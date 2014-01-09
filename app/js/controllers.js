@@ -8,6 +8,7 @@ angular.module('myApp.controllers', []).
 
         $scope.addTodo = function (todoText) {
             $scope.todos.push({text: todoText, done: false});
+            $scope.todoText = "";
         };
 
         $scope.remaining = function () {
