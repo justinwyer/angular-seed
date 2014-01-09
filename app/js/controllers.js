@@ -4,14 +4,10 @@
 
 angular.module('myApp.controllers', []).
     controller('TodoController', function ($scope) {
-        $scope.todos = [
-            {text: 'learn angular', done: true},
-            {text: 'build an angular app', done: false}
-        ];
+        $scope.todos = [];
 
-        $scope.addTodo = function () {
-            $scope.todos.push({text: $scope.todoText, done: false});
-            $scope.todoText = '';
+        $scope.addTodo = function (todoText) {
+            $scope.todos.push({text: todoText, done: false});
         };
 
         $scope.remaining = function () {

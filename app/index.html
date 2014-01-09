@@ -5,15 +5,17 @@
     <title>My AngularJS App</title>
     <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body ng-controller="TodoController">
+<body ng-controller="TodoController" ng-init="done = false">
 
 <section id="todoapp">
     <header id="header">
         <h1>todos</h1>
 
-        <form ng-submit="addTodo()">
+        <!--<input id="search" placeholder="Search for todo" autofocus ng-model="searchText">-->
+        <form ng-submit="addTodo(todoText)">
             <input id="new-todo" placeholder="What needs to be done?" autofocus ng-model="todoText">
         </form>
+
     </header>
 
     <section id="main">
@@ -30,23 +32,6 @@
             </li>
         </ul>
     </section>
-
-    <footer id="footer">
-        <span id="todo-count"><strong>{{remaining()}}</strong> item(s) left</span>
-        <ul id="filters">
-            <li>
-                <a class="selected" href="#/">All</a>
-            </li>
-            <li>
-                <a href="#/active">Active</a>
-            </li>
-            <li>
-                <a href="#/completed">Completed</a>
-            </li>
-        </ul>
-        <!-- Hidden if no completed items are left ↓ -->
-        <button id="clear-completed" ng-click="archive()">Clear completed (1)</button>
-    </footer>
 </section>
 
 <script src="lib/angular/angular.js"></script>
